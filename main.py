@@ -1,4 +1,5 @@
 # You run it like this: python main.py 
+# depending on the commands you write is the output you get XD
 import argparse
 import datetime
 
