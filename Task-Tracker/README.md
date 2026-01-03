@@ -64,3 +64,24 @@ Each task should have the following properties:
 - **`status`**: The status of the task (**`todo`,`in-progress`,`done`**)
 - **`createdAt`**: The date and time when the task was created
 - **`updateAt`**: The date and time when the task was last updated
+
+---
+
+## Folder Structure
+
+```powershell:
+Task-Tracker/
+|
+|-- cli/
+|
+|-- core/
+|
+|-- storage/
+|
+|-- data/
+|
+|-- tests/
+|
+|-- README.md
+
+```
