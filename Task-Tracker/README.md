@@ -85,3 +85,41 @@ Task-Tracker/
 |-- README.md
 
 ```
+
+---
+
+```powershell:
+How it should finish
+
+task_cli/
+│
+├── cli/
+│   ├── __init__.py
+│   ├── main.py          # Punto de entrada (parser + dispatch)
+│   └── commands/        # Cada comando del CLI
+│       ├── __init__.py
+│       ├── add.py
+│       ├── list.py
+│       ├── update.py
+│       ├── delete.py
+│       └── mark.py
+│
+├── core/
+│   ├── __init__.py
+│   ├── task.py          # Modelo de dominio (Task)
+│   └── manager.py       # Reglas de negocio
+│
+├── storage/
+│   ├── __init__.py
+│   ├── repository.py    # Interfaz de persistencia
+│   └── json_store.py    # Implementación concreta (JSON)
+│
+├── data/
+│   └── tasks.json       # Datos persistidos
+│
+├── tests/
+│   └── test_core.py     # Pruebas (cuando estés listo)
+│
+├── README.md
+└── pyproject.toml / setup.py (opcional)
+```
