@@ -1,37 +1,70 @@
-# You run it like this: python main.py 2 5 -vvv
+# You run it like this: python main.py 
 import argparse
+import datetime
 
 parser = argparse.ArgumentParser()
-group = parser.add_mutually_exclusive_group()
 
 parser.add_argument(
-    "a", type=int, help="The base value"
+    "filename", help="A name of a file to process",
+    nargs="?", default="default_file.txt"
 )
 
 parser.add_argument(
-    "b", type=int, help="The exponent"
+    "-c", "--copy", type=int,
+    metavar="N", help="Make N number of copies",
+    nargs="?", const=2
 )
 
-group.add_argument(
-    "-v", "--verbose", action="count",
-    help="Provides a verbose description. Use -vv for extra verbose."
+parser.add_argument(
+    "-s","--something",
+    action="store_true" 
 )
 
-group.add_argument(
-    "-s", "--silence", action="store_true",
-    help="Generate a silent version of the output"
+parser.add_argument(
+    "-d", "--date", 
+    type=datetime.date.fromisoformat, help="datetime"
+)
+
+parser.add_argument(
+    "-v","--version",
+    action="version", version="main.py v1.0"
+)
+
+parser.add_argument(
+    "-n", "--name", default="file_copy",
+    choices=["name1","name2","name3"]
+)
+
+parser.add_argument(
+    "-a","--append", action="append"
+)
+
+parser.add_argument(
+    "-o","--other",
+    const=1,
+    action="append_const", dest="some_list"
+)
+
+parser.add_argument(
+    "-e","--etcethera", 
+    const=2,
+    action="append_const", dest="some_list"
+)
+
+parser.add_argument(
+    "-q", "--quantity",
+    help="Counts the times you input the command",
+    action="count"
 )
 
 args: argparse.Namespace = parser.parse_args()
-result: int = args.a ** args.b
+print(args)
 
-if args.silence:
-    print("Silenced!")
+if args.something and args.copy:
+    print("You use -s and -c command") 
+elif args.something:
+    print("You used -s command")
+elif args.copy:
+    print("You used -c command")
 else:
-    match args.verbose:
-        case 1:
-            print(f"The result is {result}")
-        case 2:
-            print(f"{args.a} ** {args.b} = {result}")
-        case _:
-            print(result)
+    print("You didn\'t used any command")
