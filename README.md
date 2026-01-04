@@ -70,27 +70,6 @@ Each task should have the following properties:
 ## Folder Structure
 
 ```powershell:
-Task-Tracker/
-|
-|-- cli/
-|
-|-- core/
-|
-|-- storage/
-|
-|-- data/
-|
-|-- tests/
-|
-|-- README.md
-
-```
-
----
-
-```powershell:
-How it should finish
-
 task_cli/
 │
 ├── cli/
@@ -121,5 +100,5 @@ task_cli/
 │   └── test_core.py     # Pruebas (cuando estés listo)
 │
 ├── README.md
-└── pyproject.toml / setup.py (opcional)
+└── pyproject.toml / setup.py (optional)
 ```
