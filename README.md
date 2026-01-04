@@ -78,7 +78,7 @@ task_cli/
 │   └── commands/        # Cada comando del CLI
 │       ├── __init__.py
 │       ├── add.py
-│       ├── list.py
+│       ├── list_tasks.py
 │       ├── update.py
 │       ├── delete.py
 │       └── mark.py
