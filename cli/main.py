@@ -7,6 +7,7 @@ def main():
 
     # Creation of the subcommand manager
     subparser = parser.add_subparsers(dest="command")
+    subparser.required = True
 
     # Request /commands/ to register commands
     commands.load_commands(subparser)

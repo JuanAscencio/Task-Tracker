@@ -10,8 +10,7 @@ add.py must:
 It must:
 * receive the parser from the add command
 * define which function is executed
-* define which function is executed
-* expose a public logging function
+* expose a public command register function
 '''
 
 # add_task receives a Namespace
