@@ -12,13 +12,12 @@ It must:
 * define which function is executed
 * expose a public command register function
 '''
+from core import task
 
-# add_task receives a Namespace
-# print will go to /core/ later 
-def add_task(args):
-    print(f"Added task: {args.description}")
+def handle(args):
+    print(task.add_task(args.description))
 
 # Doesn't validate logic nor interprets semantic
 def register(parser):
     parser.add_argument("description")
-    parser.set_defaults(func=add_task)
+    parser.set_defaults(func=handle)
