@@ -10,8 +10,11 @@ Important!
 - It does NOT print anything
 
 '''
-from . import add
+from . import add, list_tasks
 
 def load_commands(subparsers):
     add_parser = subparsers.add_parser("add")
     add.register(add_parser)
+
+    list_parser = subparsers.add_parser("list")
+    list_tasks.register(list_parser)
