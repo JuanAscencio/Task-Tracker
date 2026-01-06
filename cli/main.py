@@ -1,5 +1,5 @@
 import argparse
-import commands
+from . import commands # Changed to be able to run 
 
 def main():
     # Creation of Parser
