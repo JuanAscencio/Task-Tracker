@@ -1,0 +1,15 @@
+🎥 Diseño limpio / arquitectura
+
+“Clean Architecture in Python” – ArjanCodes
+
+“Stop Writing God Functions” – mCoding
+
+
+🎥 Pensar en datos
+
+“Data Oriented Design” – CodeOpinion (conceptual, no Python)
+
+
+🎥 CLI bien diseñado
+
+“Building maintainable CLIs in Python” – Real Python
