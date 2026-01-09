@@ -1,8 +1,7 @@
+from core import task
+
 def list_task(args):
-    if args.status:
-        print(f"Listing all task with status: {args.status}")
-    else:
-        print("Listing all tasks")
+    print(task.tasks(args.status))
 
 def register(parser):
     parser.add_argument(

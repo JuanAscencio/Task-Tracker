@@ -1,5 +1,10 @@
+'''
+Command to run:
+python -m cli.main add "Hello"
+'''
+
 import argparse
-from . import commands # Changed to be able to run 
+from . import commands 
 
 def main():
     # Creation of Parser
