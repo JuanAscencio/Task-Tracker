@@ -18,7 +18,7 @@ def add_task(task_description):
 def filter_tasks(status):
     status_Tasks = []
     for task in list_of_tasks:
-        if status == None:
+        if status is None:
             status_Tasks.append(task)
             continue
 
