@@ -15,7 +15,8 @@ It must:
 from core import task
 
 def handle(args):
-    print(task.add_task(args.description))
+    new_task = task.add_task(args.description)
+    print(f"Task added successfully (ID: {new_task.id})")
 
 # Doesn't validate logic nor interprets semantic
 def register(parser):
