@@ -2,8 +2,8 @@ from core import task
 
 def list_task(args):
     status_Tasks = task.filter_tasks(args.status)
-    for task in status_Tasks:
-        print(f"Description: {task.description}. Status: {task.status}")
+    for t in status_Tasks:
+        print(f"Description: {t.description}. Status: {t.status}")
 
 def register(parser):
     parser.add_argument(
