@@ -1,12 +1,28 @@
-example_tasks = {
-    "todo": "First example"
-}
+class Task:
+    _next_id = 1
 
-def add_task(description: str) -> str:
-    return f"Added task: {description}."
+    def __init__(self, description, status  ="todo"):
+        self.description = description
+        self.status = status
+        self.id = Task._next_id
+        Task._next_id += 1
 
-def tasks(status: str) -> str:
-    if status == "todo":
-        for todo_task in example_tasks:
-            return example_tasks[todo_task]
+list_of_tasks = []
+
+def add_task(task_description):
+    new_task = Task(description=task_description)
+    list_of_tasks.append(new_task)
+    return new_task
+
+
+def filter_tasks(status):
+    status_Tasks = []
+    for task in list_of_tasks:
+        if status == None:
+            status_Tasks.append(task)
+            continue
+
+        if status == task.status:
+            status_Tasks.append(task)
+    return status_Tasks
         
